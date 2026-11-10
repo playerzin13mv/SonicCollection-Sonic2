@@ -22,7 +22,7 @@ import java.io.File;
 
 public class Inicio extends Activity {
 
-    private static final String PASTA_JOGO = "Sonic1SIR";
+    private static final String PASTA_JOGO = "SonicCollectionLauncher/Sonic2";
 
     private TextView titulo;
     private TextView texto;
@@ -151,10 +151,10 @@ public class Inicio extends Activity {
     private void atualizar(boolean manual) {
         if (!temAcesso()) {
             modo = 0;
-            mostrar("Sonic 1 S.I.R",
-                    "O jogo precisa de acesso aos arquivos para criar a pasta Sonic1SIR e ler o Data.rsdk.\n\n"
+            mostrar("Sonic 2 S.I.R",
+                    "O jogo precisa de acesso aos arquivos para criar a pasta SonicCollectionLauncher/Sonic2 e ler o Data.rsdk.\n\n"
                     + "Toque em \"Conceder acesso\" e ative a permissão.\n\n"
-                    + "The game needs file access to create the Sonic1SIR folder and read Data.rsdk.",
+                    + "The game needs file access to create the SonicCollectionLauncher/Sonic2 folder and read Data.rsdk.",
                     "Conceder acesso", "Fechar");
             if (!pediuAcesso) {
                 pediuAcesso = true;
@@ -167,13 +167,13 @@ public class Inicio extends Activity {
 
         if (!new File(pastaBase() + "/Data.rsdk").exists()) {
             modo = 1;
-            mostrar("Sonic 1 S.I.R",
-                    "Coloque o Data.rsdk de Sonic 1 na pasta Sonic1SIR para o jogo rodar!\n\n"
+            mostrar("Sonic 2 S.I.R",
+                    "Coloque o Data.rsdk de Sonic 2 na pasta SonicCollectionLauncher/Sonic2 para o jogo rodar!\n\n"
                     + "Pasta: " + pastaBase() + "/\n\n"
-                    + "Put the Sonic 1 Data.rsdk file in the Sonic1SIR folder to run the game!",
+                    + "Put the Sonic 2 Data.rsdk file in the SonicCollectionLauncher/Sonic2 folder to run the game!",
                     "Já coloquei", "Fechar");
             if (manual) {
-                Toast.makeText(this, "Data.rsdk ainda não encontrado na pasta Sonic1SIR",
+                Toast.makeText(this, "Data.rsdk ainda não encontrado na pasta SonicCollectionLauncher/Sonic2",
                         Toast.LENGTH_LONG).show();
             }
             return;
